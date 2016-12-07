@@ -1,0 +1,43 @@
+{% extends "base/base.html" %}
+{% block tittle %}
+	Solicitud
+{% endblock %}
+{% block titulo %}
+	<h5>Lista de Solicitudes</h5>
+{% endblock titulo %}
+{% block content %}
+	<div class="row">
+		<div class="col s8 offset-s2"> 
+		  	<table class="bordered">
+				<thead>
+					<tr>
+						<td>N° de Solicitud</td>
+						<td>Adoptante</td>
+						<td>N° Mascota</td>
+						<td>Razones</td>
+						<td>Acciones</td>
+					</tr>
+				</thead>
+				<tbody>
+					{% if object_list %}
+						{% for solicitud in object_list %}
+							<tr>
+								<td>{{solicitud.id}}</td>
+								<td>{{solicitud.persona.nombre}}</td>
+								<td>{{solicitud.numero_mascota}}</td>
+								<td>{{solicitud.razones}}</td>
+								<td>
+									<a href="{% url 'adopcion:solicitud_modificar' solicitud.id %}" class="btn-floating waves-effect waves-light">
+									<i class="material-icons left">mode_edit</i></a>
+									<a href="{% url 'adopcion:solicitud_eliminar' solicitud.id %}" class="btn-floating waves-effect waves-light"><i class="material-icons left">delete</i></a>
+								</td>
+							</tr>
+						{% endfor %}
+					{% else %}
+						<h4>No se han realizado Solicitudes aun</h4>
+					{% endif %}
+				</tbody>
+			</table>
+		</div>
+  	</div>
+{% endblock %}

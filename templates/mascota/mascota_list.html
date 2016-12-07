@@ -1,0 +1,47 @@
+{% extends 'base/base.html' %}
+
+{% block tittle %}
+	Mascota
+{% endblock %}
+{% block titulo %}
+	<h5>Lista de Mascotas</h5>
+{% endblock titulo %}
+{% block content %}
+	<div class="row">
+		<div class="col s8 offset-s2"> 
+		  	<table class="bordered">
+		    	<thead>
+		          	<tr>
+		            	<th>#</th>
+			            <th>Nombre</th>
+			            <th>Sexo</th>
+			            <th>Edad</th>
+			            <th>Fecha de Rescate</th>
+			            <th>Adoptante</th>
+			            <th>Acciones</th>
+		          	</tr>
+		        </thead>
+		        <tbody>
+		        {% if object_list %} 
+		        	{%for mascota in object_list %}
+		        	<tr>
+			            <td>{{mascota.id}}</td>
+			            <td>{{mascota.nombre}}</td>
+			            <td>{{mascota.sexo}}</td>
+			            <td>{{mascota.edad_aproximada}}</td>
+			            <td>{{mascota.fecha_rescate}}</td>
+			            <td>{{mascota.persona.nombre}} {{mascota.persona.apellido}}</td>
+		          		<td>
+		          			<a href="{% url 'mascota:mascota_editar' mascota.id %}" class="btn-floating waves-effect waves-light"><i class="material-icons left">mode_edit</i></a>
+		          			<a href="{% url 'mascota:mascota_eliminar' mascota.id %}" class="btn-floating waves-effect waves-light"><i class="material-icons left">delete</i></a>
+		          		</td>
+		          	</tr>
+		          	{% endfor%}
+		      	{% else %}
+		      		<h1>No se han creado registros</h1>
+		      	{% endif %}
+		        </tbody>
+		  	</table>
+	  	</div>
+  	</div>
+{% endblock %}

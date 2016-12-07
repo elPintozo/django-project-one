@@ -1,0 +1,23 @@
+{% extends "base/base.html" %}
+
+{% block tittle %}
+	Solicitud
+{% endblock %}
+{% block titulo %}
+	<h5>Eliminar Solicitud</h5>
+{% endblock titulo %}
+{% block content %}
+	<div class="row">
+		<div class="col s6 offset-s3">
+			<h3>¿Desea eliminar el registro de solicitud de {{object.persona.nombre}} {{object.persona.apellido}}?</h3>
+			<form method="POST" style="text-align: center;">
+				{% csrf_token %}
+				<button class="btn waves-effect waves-light" type="submint">Sí, eliminar</button>
+				<a class="btn waves-effect waves-light" href="{% url 'adopcion:solicitud_listar' %}">Cancelar</a>
+			</form>	
+		</div>
+	</div>
+{% endblock %}
+{% block jsFiles %}
+	<script type="text/javascript" src="{{STATIC_URL}}/static/js/mascotaform.js"></script>
+{% endblock %}

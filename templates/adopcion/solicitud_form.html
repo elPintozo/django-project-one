@@ -1,0 +1,60 @@
+{% extends "base/base.html" %}
+
+{% block tittle %}
+	Solicitud
+{% endblock %}
+{% block titulo %}
+	Nueva Solicitud
+{% endblock titulo %}
+{% block content %}
+	<div class="row">
+		<div class="col s8 offset-s2">
+			<form method="post">
+				{% csrf_token %}
+				<div class=" col s6">
+					<h5>Nueva Persona: </h5>
+					<div class="form-group">
+						<label for="{{form2.nombre.name}}">{{form2.nombre.label}}</label>
+						{{form2.nombre}}
+					</div>
+					<div class="form-group">
+						<label for="{{form2.nombre.apellidos}}">{{form2.apellido.label}}</label>
+						{{form2.apellido}}
+					</div>
+					<div class="form-group">
+						<label for="{{form2.edad.name}}">{{form2.edad.label}}</label>
+						{{form2.edad}}
+					</div>
+					<div class="form-group">
+						<label for="{{form2.telefono.name}}">{{form2.telefono.label}}</label>
+						{{form2.telefono}}
+					</div>
+					<div class="form-group">
+						<label for="{{form2.email.name}}">{{form2.email.label}}</label>
+						{{form2.email}}
+					</div>
+					<div class="form-group">
+						<label for="{{form2.direccion.name}}">{{form2.direccion.label}}</label>
+						{{form2.direccion}}
+					</div>
+				</div>
+				<div class=" col s6">
+					<h5>Nueva Solicitud: </h5>
+					<div class="form-group">
+						<label for="{{form.numero_mascotas.name}}">{{form.numero_mascotas.label}}</label>
+						{{form.numero_mascotas}}
+					</div>
+					<div class="form-group">
+						<label for="{{form.razones.name}}">{{form.razones.label}}</label>
+						{{form.razones}}
+					</div>
+				</div>
+				<div class=" col s4 offset-s4">
+					<button class="btn waves-effect waves-light" type="submint">Guardar</button>
+					<button class="btn waves-effect waves-light" type="reset" >Limpiar</button>
+				</div>
+				{{ form.errors }}
+			</form>
+		</div>
+	</div>
+{% endblock content %}

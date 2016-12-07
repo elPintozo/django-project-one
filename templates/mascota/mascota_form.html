@@ -1,0 +1,23 @@
+{% extends "base/base.html" %}
+
+{% block tittle %}
+	Mascota
+{% endblock %}
+{% block titulo %}
+{% endblock titulo %}
+{% block content %}
+	<div class="row">
+		<div class="col s6 offset-s3">
+			<form method="POST" >
+				{% csrf_token %}
+				{{form.as_p}}
+				<button class="btn waves-effect waves-light" type="submint">Guardar</button>
+				<button class="btn waves-effect waves-light" type="reset" >Limpiar</button>
+				{{ form.errors }}
+			</form>	
+		</div>
+	</div>
+{% endblock %}
+{% block jsFiles %}
+	<script type="text/javascript" src="{{STATIC_URL}}/static/js/mascotaform.js"></script>
+{% endblock %}

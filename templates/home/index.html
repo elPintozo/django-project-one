@@ -1,0 +1,42 @@
+{% extends "base/base.html" %}
+{% block tittle %}
+	Ingresar
+{% endblock %}
+{% block header %}
+	
+{% endblock header %}
+
+{% block titulo %}
+	<p class="flow-text left">Bienvenido</p>
+{% endblock titulo %}
+
+{% block content %}
+	<div class="row">
+		<div class="col s6 offset-s3">
+			<p class="flow-text center">Ingresar</p>
+			<form method="post">
+				{% csrf_token %}
+				<div class="input-field col s4 offset-s4">
+					<i class="material-icons prefix">account_circle</i>
+		        	<input id="last_name" type="text" class="validate" name="username">
+		          	<label for="last_name">Nombre de usuario</label>
+		        </div>
+		        <div class="input-field col s4 offset-s4">
+		        	<i class="material-icons prefix">vpn_key</i>
+		          	<input id="pass" type="password" class="validate" name="password">
+		          	<label for="pass">Contraseña</label>
+		        </div>
+		        <div class="input-field col s4 offset-s4 center">
+		        	<button type="submit" class="waves-effect waves-light btn">
+		        		<i class="material-icons left">input</i>Ingresar
+	        		</button>
+		        	<a href="#!">Olvidé mi contraseña</a>
+		        </div>
+			</form>
+		</div>
+	</div>
+{% endblock content %}
+
+{% block footer %}
+	
+{% endblock footer %}

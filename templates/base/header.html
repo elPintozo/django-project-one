@@ -1,0 +1,67 @@
+<header>
+	<ul id="mascota_option" class="dropdown-content">
+    	<li><a href="{% url 'mascota:mascota_listar' %}">Listar<i class="Small material-icons right">view_list</i></a></li>
+    	<li class="divider"></li>
+    	<li><a href="{% url 'mascota:mascota_crear' %}">Nuevo<i class="Small material-icons right">playlist_add</i></a></li>
+	  	<li class="divider"></li>
+	  	<li><a href="#!">Modificar<i class="Small material-icons right">mode_edit</i></a></li>
+	  	<li class="divider"></li>
+	  	<li><a href="#!">Eliminar<i class="Small material-icons right">delete</i></a></li>
+	</ul>
+	<ul id="adopcion_option" class="dropdown-content">
+		<li><a href="#!">Listar<i class="Small material-icons right">view_list</i></a></li>
+		<li class="divider"></li>
+		<li><a href="#!">Nuevo<i class="Small material-icons right">playlist_add</i></a></li>
+	  	<li class="divider"></li>
+	  	<li><a href="#!">Modificar<i class="Small material-icons right">mode_edit</i></a></li>
+	  	<li class="divider"></li>
+	  	<li><a href="#!">Eliminar<i class="Small material-icons right">delete</i></a></li>
+	</ul>
+	<ul id="solicitud_option" class="dropdown-content">
+		<li><a href="{% url 'adopcion:solicitud_listar' %}">Listar<i class="Small material-icons right">view_list</i></a></li>
+		<li class="divider"></li>
+	  	<li><a href="{% url 'adopcion:solicitud_crear' %}">Nuevo<i class="Small material-icons right">playlist_add</i></a></li>
+	  	<li class="divider"></li>
+	  	<li><a href="#!">Modificar<i class="Small material-icons right">mode_edit</i></a></li>
+	  	<li class="divider"></li>
+	  	<li><a href="#!">Eliminar<i class="Small material-icons right">delete</i></a></li>
+	</ul>
+	<nav class="teal lighten-2">
+	    <div class="nav-wrapper">
+      		<a href="#" class="brand-logo"><i class="material-icons">store</i>Logo</a>
+      		<a href="#" data-activates="mobile-demo" class="button-collapse right"><i class="material-icons">menu</i></a>
+      		<ul class="right hide-on-med-and-down">
+	        	<li><a href="{% url 'mascota:index' %}">Inicio</a></li>
+		        <li><a class="dropdown-button" href="#!" data-activates="adopcion_option">Adopción<i class="material-icons right">arrow_drop_down</i></a></li>
+		        <li><a class="dropdown-button" href="#!" data-activates="solicitud_option">Solicitud<i class="material-icons right">arrow_drop_down</i></a></li>
+		        <li><a class="dropdown-button" href="#!" data-activates="mascota_option">Mascotas<i class="material-icons right">arrow_drop_down</i></a></li>
+		        <li><a href="{% url 'logout' %}">Salir</a></li>
+	      	</ul>
+	      	<ul class="side-nav" id="mobile-demo">
+	      		<li><a href="{% url 'mascota:index' %}">Inicio</a></li>
+	      		<li><a class="dropdown-button" href="#!" data-activates="dropdown1">Adopción<i class="material-icons right">arrow_drop_down</i></a></li>
+		      	<ul id='dropdown1' class='dropdown-content'>
+			        <li><a href="#!">Listar<i class="Small material-icons right">view_list</i></a></li>
+			        <li><a href="#!">Nuevo<i class="Small material-icons right">playlist_add</i></a></li>
+			        <li><a href="#!">Modificar<i class="Small material-icons right">mode_edit</i></a></li>
+			        <li><a href="#!">Eliminar</a></li>
+			    </ul>
+			    <li><a class="dropdown-button" href="#!" data-activates="dropdown2">Solicitud<i class="material-icons right">arrow_drop_down</i></a></li>
+		      	<ul id='dropdown2' class='dropdown-content'>
+			        <li><a href="{% url 'adopcion:solicitud_listar' %}">Listar<i class="Small material-icons right">view_list</i></a></li>
+			        <li><a href="{% url 'adopcion:solicitud_crear' %}">Nuevo<i class="Small material-icons right">playlist_add</i></a></li>
+			        <li><a href="#!">Modificar<i class="Small material-icons right">mode_edit</i></a></li>
+			        <li><a href="#!">Eliminar</a></li>
+			    </ul>
+			    <li><a class="dropdown-button" href="#!" data-activates="dropdown3">Mascotas<i class="material-icons right">arrow_drop_down</i></a></li>
+		      	<ul id='dropdown3' class='dropdown-content'>
+			        <li><a href="{% url 'mascota:mascota_listar' %}">Listar<i class="Small material-icons right">view_list</i></a></li>
+			        <li><a href="{% url 'mascota:mascota_crear' %}">Nuevo<i class="Small material-icons right">playlist_add</i></a></li>
+			        <li><a href="#!">Modificar<i class="Small material-icons right">mode_edit</i></a></li>
+			        <li><a href="#!">Eliminar</a></li>
+			    </ul>
+			    <li><a href="{% url 'logout' %}">Salir</a></li>
+	      	</ul>
+	    </div>
+  	</nav>
+</header>

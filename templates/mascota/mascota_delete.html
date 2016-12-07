@@ -1,0 +1,23 @@
+{% extends "base/base.html" %}
+
+{% block tittle %}
+	Mascota
+{% endblock %}
+{% block titulo %}
+	<h5>Eliminar registro Mascota</h5>
+{% endblock titulo %}
+{% block content %}
+	<div class="row">
+		<div class="col s6 offset-s3">
+			<h3>¿Desea eliminar el registro {{object.nombre}}?</h3>
+			<form method="POST" style="text-align: center;">
+				{% csrf_token %}
+				<button class="btn waves-effect waves-light" type="submint">Sí, eliminar</button>
+				<a class="btn waves-effect waves-light" href="{% url 'mascota:mascota_listar' %}">Cancelar</a>
+			</form>	
+		</div>
+	</div>
+{% endblock %}
+{% block jsFiles %}
+	<script type="text/javascript" src="{{STATIC_URL}}/static/js/mascotaform.js"></script>
+{% endblock %}
